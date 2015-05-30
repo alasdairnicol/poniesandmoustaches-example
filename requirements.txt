@@ -1,0 +1,4 @@
+django
+jinja2
+pystache
+git+git://github.com/alasdairnicol/django-mustache.git@master

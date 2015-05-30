@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <style type="text/css">
+      .row1 { background-color: #EDF3FE; }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-4">
+      <h1>Django Con Europe History</h1>
+      <table class="table table-bordered table-condensed">
+	<thead>
+	  <th>Year</th>
+	  <th>Location</th>
+	</thead>
+	{{#conferences}}
+	<tr class="{% cycle 'row1' 'row2' %}">
+	  <td>{{ year }}</td>
+	  <td>{{ location }}, {{ country }}</td>
+	</tr>
+	{{/conferences}}
+	{{^conferences}}
+	<tr>
+	  <td colspan="2">No conferences have been added yet!</td>
+	</tr>
+	{{/conferences}}
+      </table>
+      </div><!-- .col-md-3" -->
+    </div><!-- .row -->
+  </body>
+</html>
